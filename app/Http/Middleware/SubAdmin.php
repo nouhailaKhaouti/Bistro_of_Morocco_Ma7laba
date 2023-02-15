@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class IsAdmin
+class SubAdmin
 {
     /**
      * Handle an incoming request.
@@ -17,13 +17,9 @@ class IsAdmin
      */
     public function handle(Request $request, Closure $next)
     {
-
-        if (Auth::user() &&  Auth::user()->role == 0) {
-             return $next($request);
-        }else if(Auth::user() &&  Auth::user()->role == 2){
-            
-            return view('admin.product');
+        if (Auth::user()->role == 2 || Auth::user()->role == 0) {
+            return $next($request);
         }
-        return redirect('/')->with('error','You have not admin access');
+       return redirect('/')->with('error','You have not access to this function');
     }
 }

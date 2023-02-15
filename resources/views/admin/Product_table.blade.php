@@ -30,7 +30,7 @@
                         <a href="{{ route('deleting',$product->id) }}"class="btn btn-sm btn-outline-danger" onclick="return confirm('are you sure ,you want to delete this product ')">delete</a>
                     </td>
                     <td> 
-                        <button class="btn btn-success btn-bg btn-md m-1 rounded " onclick="editProduct(`{{$product->id}}`,`{{$product->name}}`,`{{$product->price}}`,`{{$product->description}}`,`{{url('product_update')}}`)"><i class="bi bi-pencil"> Edit</i></button>
+                        <button class="btn btn-success btn-bg btn-md m-1 rounded " onclick="editProduct(`{{$product->id}}`,`{{$product->name}}`,`{{$product->price}}`,`{{$product->description}}`,`{{$product->category_id}}`,`{{url('product_update')}}`)"><i class="bi bi-pencil"> Edit</i></button>
                     </td>
                 </tr>
                 @endforeach

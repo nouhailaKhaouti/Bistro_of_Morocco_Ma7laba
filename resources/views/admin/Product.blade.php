@@ -12,7 +12,7 @@
                     <h3><strong>Add Product</strong></h3>
                     <br>
                     <div id="add_product">
-                        <button class="btn button" type="submit" onclick="createProduct(`{{url('product_create')}}`)"> Add product</button>
+                        <button class="btn btn-primary" type="submit" onclick="createProduct(`{{url('product_create')}}`)"> Add product</button>
                     </div>
                     <br>
                     <br>

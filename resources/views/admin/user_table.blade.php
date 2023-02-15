@@ -28,14 +28,20 @@
                     <td>{{$user->name}}</td>
                     <td>{{$user->email}}</td>
                     <td>
-                    @if($user->role==true)    
+                    @if($user->role==1)    
                     user normale 
+                    @elseif($user->role==2)
+                    sub Admin
                     @else
                     user Admin
                     @endif
                     </td>
                     <td>
-                    <a href="{{ route('role',$user->id) }}"class="btn btn-sm btn-outline-warning" onclick="return confirm('are you sure ,you want to change the role of this user ')">changer role</a>
+                    @if(Auth::user()->role==0)    
+                    <a href="{{ route('role',$user->id) }}"class="btn btn-sm btn-outline-warning" onclick="return confirm('are you sure ,you want to change the role of this user')">change role</a>
+                    @else
+                    You don't have any action in this table
+                    @endif 
                 </td>
                 </tr>
                 @endif

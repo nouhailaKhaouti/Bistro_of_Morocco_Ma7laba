@@ -11,7 +11,12 @@
                 <form method="post" enctype='multipart/form-data' action="" id="Form">
                     @csrf
                     <input type="text" name="name" id="name" class="form-control">
-                    <input type="text" name="price" id="price"  class="form-control">
+                    <input type="number" name="price" id="price"  class="form-control">
+                    <select class="form-select form-select-sm cart shadow-sm" name="category" id="category">
+                    @foreach($categories as $category)
+                    <option value="{{$category->id}}">{{$category->label}}</option>
+                    @endforeach
+                    </select>
                     <textarea name="description" id="description" cols="30" rows="10"></textarea>
                     <div id="show_item">
                         <div class="d-flex flex-column pe-5 mt-2 mb-2 bg-light ">

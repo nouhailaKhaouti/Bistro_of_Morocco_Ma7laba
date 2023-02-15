@@ -12,7 +12,7 @@
                    <h3><strong>Add Category</strong></h3>
                    <br>
                    <div id="add_category">
-                        <button class="btn button" type="submit" onclick="createCategory(`{{url('category_create')}}`)"> Add category</button>
+                        <button class="btn btn-primary" type="submit" onclick="createCategory(`{{url('category_create')}}`)"> Add category</button>
                     </div>
                    <br>
                    <br>
